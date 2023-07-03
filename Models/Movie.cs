@@ -6,6 +6,10 @@ namespace MovieTicketsApp.Models
 {
     public class Movie
     {
+        //public Movie()
+        //{
+        //    this.Actors = new HashSet<Actor>();
+        //}
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +21,8 @@ namespace MovieTicketsApp.Models
         public MovieCategory MovieCategory { get; set; }
 
         //Relationships
-        public List<Actor_Movie> Actors_Movies { get; set; }
+        public HashSet<Actor_Movie> Actors_Movies { get; set; } = new HashSet<Actor_Movie> { };
+
 
         //Cinema
         public int CinemaId { get; set; }
